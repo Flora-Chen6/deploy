@@ -7,9 +7,9 @@ import {
   import Login from "./pages/Login";
   import Landpage from "./pages/Landpage";
   import Directory from "./pages/Directory";
-//   import Calendar from "./pages/Calendar";
+  import Calendar from "./pages/Calendar";
   import './index.css';
-  // import 'bootstrap/dist/css/bootstrap.min.css';
+  import 'bootstrap/dist/css/bootstrap.min.css';
   import 'bootstrap/dist/css/bootstrap.css';
   
   
@@ -31,21 +31,21 @@ import {
       path: "/login",
       element: <Login />,
     },
-    // {
-    //   path: "/Directory",
-    //   element: <Directory />,
-    // },
-    // {
-    //   path: "/Calendar",
-    //   element: <Calendar />,
-    // },
+    {
+      path: "/Directory",
+      element: <Directory />,
+    },
+    {
+      path: "/Calendar",
+      element: <Calendar />,
+    },
   ]);
   
   function App() {
     return (
       <div className="app">
         <div className="container">
-          <p> This is APP page </p>
+          {/* <p> This is APP page </p> */}
           <RouterProvider router={router} />
           
         </div>

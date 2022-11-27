@@ -15,7 +15,7 @@ function HeadNav() {
 
                 <ul className="nav col-12 col-lg-auto mb-2 me-lg-auto text-end">
                     <li><a href="#" className="nav-link px-2 link-secondary">My Pings</a></li>
-                    <li><a href="#" className="nav-link px-2 link-dark">My Calendar</a></li>
+                    <li><a href="/calendar" className="nav-link px-2 link-dark">My Calendar</a></li>
                     <li><a href="#" className="nav-link px-2 link-dark">My Hours</a></li>
                 </ul>
 
