@@ -39,8 +39,8 @@ return (
 
         {LeftNav()}
         <Calendar
-            localizer={localizer}
-            events={myEventsList}
+            localizer={ localizer }
+            events={ myEventsList }
             startAccessor="start"
             endAccessor="end"
             style = {{height:600, width:1000, marginTop: "50px"}}
