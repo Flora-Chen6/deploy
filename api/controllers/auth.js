@@ -82,7 +82,8 @@ export const login = (req, res) => {
            if (data.records[0] === undefined) return res.status(409).json("User Not Found. Please Register");
         // CHECK PASSWORD
            if (inputPassword !== data.records[0].Password__c)  return res.status(409).json("Wrong password");
-           return res.status(200).json("User has been created.");
+        //    const currentUser = {"email": inputEmail, "password": inputPassword} 
+           return res.status(200).json(inputEmail);
        })
    });
     /*
