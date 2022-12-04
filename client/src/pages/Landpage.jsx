@@ -4,11 +4,17 @@ import LeftNav from "../components/LeftNav/index";
 import HeadNav from "../components/HeadNav/index";
 import piccal from "../media/calendar.png";
 import picgroup from "../media/Group 1.png";
+import { useContext } from "react";
+import { AuthContext } from "../context/authContext.js"
+
 
 // import { Link } from "react-router-dom";
 
 
 export const Landpage = () => {
+
+    const { currentUser } = useContext(AuthContext);
+
     return (
         <header className="pb-4 mb-3">
             {HeadNav()}
@@ -16,7 +22,7 @@ export const Landpage = () => {
                 {LeftNav()}
                 <div className="list-group mt-5 pt-4 w-50">
                     <div className="col-md-12">
-                        <h2>Good Morning, Flash!</h2>
+                        <h2>Good Morning { currentUser?.split("@")[0]} !</h2>
                         <div className="mt-3 bg-green rounded-3">
                             <p className="p-3"> Announcements:</p>
                         </div>

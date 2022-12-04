@@ -25,9 +25,14 @@ export const register = (req, res) => {
 
         //CHECK EXISTING USER 
         conn.query(`SELECT Name FROM UserPassword__c WHERE Name LIKE '${ inputEmail }' `, (err, data) => {
-            if (err) return res.status(500).json(err);
-            // console.log(data.records[0])
+            // if (err) return res.status(500).json(err);
+            if (err) return res.status(409).json("user not allowed to register");
+
             if (data.records[0] !== undefined) return res.status(409).json("User already exists!");
+            console.log(data.records[0])
+            if (data.records[0] === undefined) console.log("user not allowed to register");
+            console.log("testing!!!!!");
+
                 conn.sobject("UserPassword__c").create({ Name : insertEmail, Password__c: insertPassword }, function(err, data) {
                     console.log(data.records)
                     
@@ -103,8 +108,11 @@ export const login = (req, res) => {
 };
 
 export const logout = (req, res) => {
-
-};
+    res.clearCookie("access_token",{
+      sameSite:"none",
+      secure:true
+    }).status(200).json("User has been logged out.")
+  };
 
 export const home = (req, res) => {
     console.log(req);

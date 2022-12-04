@@ -39,8 +39,9 @@ import axios from "axios";
             }
             catch(err) {
                 console.log(err.response.data)
+                // console.log("User Not Allowed to Register")
             }
-            console.log("registration submitted")
+            // console.log("registration submitted")
         };
 
     return (

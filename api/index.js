@@ -19,6 +19,6 @@ app.use("/calendar", eventRoutes);
 // app.use("/api/home", homeRoutes);
 
 
-app.listen(8080, () => {
-    console.log("Connected to 8080!");
+app.listen(7000, () => {
+    console.log("Connected to 7000!");
 });

@@ -1,6 +1,10 @@
 import React from "react";
+import { useContext } from "react";
+import { AuthContext } from "../../context/authContext.js"
+import { Link } from "react-router-dom";
 
 function HeadNav() {
+    const { currentUser, logout } = useContext(AuthContext);
     return (
         <div className="container">
             <div className="pb-4 d-flex flex-wrap align-items-center justify-content-center justify-content-lg-end border-bottom">
@@ -19,6 +23,8 @@ function HeadNav() {
                     <li><a href="#" className="nav-link px-2 link-dark">My Hours</a></li>
                 </ul>
 
+                <span> { currentUser?.split("@")[0] } </span>
+
                 <div className="dropdown text-end">
                     <a href="#" className="d-block link-dark text-decoration-none dropdown-toggle"
                        data-bs-toggle="dropdown" aria-expanded="false">
@@ -36,6 +42,7 @@ function HeadNav() {
                         <li><a className="dropdown-item" href="#">Sign out</a></li>
                     </ul>
                 </div>
+                {currentUser? <span onClick={logout}> <Link to = "/login">Logout</Link> </span> : <Link to = "/login">Login</Link>}
             </div>
         </div>
     );
